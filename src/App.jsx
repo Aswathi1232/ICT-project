@@ -1,24 +1,33 @@
+import { Routes, Route } from 'react-router-dom';
 
+import React from 'react'
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Login from './Pages/Login';
 
-function App() {
+import Notfound from './Pages/Notfound';
+import Navbar from './Components/Navbar';
+
+export default function App()
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div> 
+
+    <Navbar/> 
+
+    <Routes>
+      
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="*" element={<Notfound />} />
+ 
+ </Routes>
+
+ </div>
+  )
 }
 
-export default App;
+      
